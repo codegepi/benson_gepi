@@ -1,0 +1,105 @@
+/*!
+ * be-coderamp-resume3 
+ * be-coderamp-resume3-stylesheet.css
+ */
+
+/*! THEMATIC*/
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+body {
+    background-color: #f2f2f2;
+}
+.content-text{
+	background-color:white;
+}
+.content-text p,ol,h1{
+	color:#6a737b;
+	font-size:15px;
+	font-family: "Open Sans","Helvetica Neue",Helvetica,Arial;
+}
+.content-text ul{
+	font-size:13px;
+}
+.btn-greytext {
+	color:#6a737b;
+	font-size:14px;
+}
+
+
+/*! HEADER-ADDITIONAL*/
+#page-header-id {
+	margin:auto;
+  	background-color:#f2f2f2;
+  	margin-top:-10px;
+  	text-align:center;
+  	border:none;
+}
+#page-header-id h1{
+	font-size:20px;
+	color:white;
+}
+.page-header-idname{
+	background-color:#788cb6;
+	padding:6px;
+	font-family:"Open Sans";
+}
+.page-header-idsecondary{
+	background-color:#788cb6;
+	padding:4px;
+	font-family:"Open Sans";
+}
+#page-header-des{
+	padding:10px;
+	text-align:center
+}
+#page-header-des p{
+	font-size:18px;
+	font-family: "Lato","Helvetica Neue",Helvetica,Arial;
+}
+
+/*! HEADER-SOCIALMEDIA */
+#socmed{
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-right:5px;
+	margin-left:5px;
+}
+
+/*! BODY-PROFILE */
+#content-body h1{
+	font-size:20px;
+	color:white;
+}
+
+#contact-body{
+	position:relative;
+	vertical-align: center;
+	padding-bottom:30px;
+	font-size:5px;
+	text-align:center;
+}
+.text-des{
+	font-size:20px;
+}
+
+/*! SKILLBAR */
+#skillbar-1{
+	margin-top:15px;
+}#skillbar-4{
+	margin-bottom:100px;
+}
+
+
+/*! FOOTER */
+#footer-des{
+	width:100%;
+	padding:10px;
+	text-align:center;
+	background-color:grey;
+	margin:auto;
+}
+#footer-des p{
+	font-size:13px;
+	font-family: "Lato","Helvetica Neue",Helvetica,Arial;
+	color:white;
+}
