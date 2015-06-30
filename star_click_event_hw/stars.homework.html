@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+ 	<head>
+ 	</head>
+
+ 	<body>
+
+		<fieldset>
+			<form>
+				<p><strong>Please put how many lines of stars do you want?<strong></p>
+				<input id="myStars" type="number"/>
+				<input id="myStarsSubmit" type="submit"/>
+			<form>
+		</fieldset>
+
+	 	<div id="myStarsPrint">
+	 	</div>
+
+		<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+		<script>
+
+		$(document).ready( 
+			function() {
+
+				$("#myStarsSubmit").click(function(){
+
+					var textStars = "";
+
+					for (i=0; i<=$("#myStars").val();i++){
+						for(j=0;j<i;j++)
+						{
+							textStars += "*";
+						}
+						textStars += "<br/>";
+					};
+					$("#myStarsPrint").html(textStars);
+					return false;
+   			 	});
+			});
+
+		</script>
+
+ 	</body>
+
+ 	<footer>
+ 	</footer>
+
