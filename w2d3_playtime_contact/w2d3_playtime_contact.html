@@ -1,0 +1,125 @@
+<!-- Author: 	Benson Engelbert
+Date: 			01072015 -->
+
+<!DOCTYPE html>
+<html lang="en">
+ 	<head>
+	  	<title>Playtime Contact Card</title>
+	    <meta charset="utf-8"> 
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="assets/bs/jq/jquery-1.11.3.min.js"></script>
+	    <script src="assets/bs/js/bs.js"></script>
+	    <script src="assets/bs/js/foundation.js"></script>
+	    <script src="assets/bs/js/fastclick.js"></script>
+	    <script src="assets/bs/js/modernizr.js"></script>
+		<link type="text/css" rel="stylesheet" href="assets/bs/css/bs.css">
+		<link type="text/css" rel="stylesheet" href="assets/bs/css/foundation.css">
+		<style>
+		.contactField{
+			color:black;
+		}
+		#outputContact{
+			font-size:14px;
+			color:grey;
+			font-family:"Open Sans",Helvetica,Arial;
+		}
+		</style>
+	</head>
+	<body style="margin:10px">
+		<nav class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+			<li class="name">
+			<h1><a href="#">Benson's Address Book</a></h1>
+			</li>
+		</nav>
+		<br/>
+
+		<!-- FORM INPUT AREA -->
+
+		<div class="row medium-uncollapse large-collapse">
+		<div class="small-6 columns">
+			<form>
+			<div class="row">
+				<div style="background-color:#34bf49;padding:10px"class="small-12 columns">
+					<label>First Name
+					<input type="text" id="contactFirstName" placeholder="Given First Name/s" />
+					</label>
+					<label>Last Name
+					<input type="text" id="contactLastName" placeholder="Given Surname" />
+					</label>
+					<label>Address
+					<input type="text" id="contactAddress" placeholder="Complete Address" />
+					</label>
+					<label>Email
+					<input type="text" id="contactEmail" placeholder="name@domain.com" />
+					</label>
+					<label>Mobile Number
+					<input type="text" id="contactMobile" placeholder="+(code)number" />
+					<input type="hidden" value="1" id="hiddenField">
+					<input type="submit" id="contactSubmit" style="color:black" value="Add to your contacts"/>
+					</label>
+				</div>
+			</div>
+		</form>
+		</div>
+
+		<div class="small-6 columns" id="outputContact">
+		</div>
+		</div>
+
+		<script>
+			var warningAlert = "Please complete all information."
+			$(document).ready( 
+			function() { //START
+				$("#contactSubmit").click(function(){ // BEGIN CLICK
+					console.log("test");
+
+					if ($("#contactFirstName").val() === "") {
+					  alert(warningAlert);
+					} else if ($("#contactLastName").val() === "") {
+					  alert(warningAlert);
+					} else if ($("#contactAddress").val() === "") {
+					  alert(warningAlert);
+					} else if ($("#contactEmail").val() === "") {
+					  alert(warningAlert);
+					} else if ($("#contactMobile").val() === "") {
+					  alert(warningAlert);
+					} else {
+						var Hasil ="Contact No: " + $("#hiddenField").val() + "<br/>"+
+						"Name"+ ":  "+ $("#contactFirstName").val()+" "+$("#contactLastName").val()+"<br/>"+
+						"Address"+ ":  "+ $("#contactAddress").val() + "<br/>"+
+						"Email"+ ":  "+ $("#contactEmail").val() + "<br/>"+
+						"Mobile"+":  "+ $("#contactMobile").val() +"<br/>"+"<br/>"
+						;
+						$("#outputContact").append(Hasil);
+						$("#hiddenField").val(parseInt($("#hiddenField").val()) + 1);
+					}
+					return false;
+   			 	}); // CLOSE CLICK
+			});   //END
+			// Alternative Script
+			// var valid = true;
+
+					// var data = [
+					// 	$("#contactFirstName").val(),
+					// 	$("#contactLastName").val(),
+					// 	$("#contactAddress").val()
+					// ]
+
+					// for(i=0;i<data.length;i++){
+					// 	if(data[i] === "") {
+					// 		valid = false;
+					// 		break;
+					// 	}
+					// }
+
+					// if(valid) {
+					// 	alert("sukses");
+					// } else {
+					// 	alert("gagal");
+					// }
+		</script>
+	</body>
+	<footer>
+	</footer>
+</html>
