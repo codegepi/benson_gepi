@@ -22,10 +22,11 @@ Date: 			01072015 -->
 			font-size:14px;
 			color:grey;
 			font-family:"Open Sans",Helvetica,Arial;
+			padding-left:10px;
 		}
 		</style>
 	</head>
-	<body style="margin:10px">
+	<body style="margin:5px">
 		<nav class="top-bar" data-topbar role="navigation">
 			<ul class="title-area">
 			<li class="name">
@@ -37,7 +38,7 @@ Date: 			01072015 -->
 		<!-- FORM INPUT AREA -->
 
 		<div class="row medium-uncollapse large-collapse">
-		<div class="small-6 columns">
+		<div class="medium-5 columns" style="margin:5px" >
 			<form>
 			<div class="row">
 				<div style="background-color:#34bf49;padding:10px"class="small-12 columns">
@@ -63,7 +64,20 @@ Date: 			01072015 -->
 		</form>
 		</div>
 
-		<div class="small-6 columns" id="outputContact">
+		<div class="medium-6 columns" style="margin:5px">
+			<table>
+				<thead>
+				<tr>
+					<th width="150">First Name</th>
+					<th width="150">Last Name</th>
+					<th width="150">Address</th>
+					<th width="150">Email</th>
+					<th width="150">Mobile</th>
+				</tr>
+				</thead>
+				<tbody id="outputContact">
+				</tbody>
+			</table>
 		</div>
 		</div>
 
@@ -74,23 +88,28 @@ Date: 			01072015 -->
 				$("#contactSubmit").click(function(){ // BEGIN CLICK
 					console.log("test");
 
-					if ($("#contactFirstName").val() === "") {
-					  alert(warningAlert);
-					} else if ($("#contactLastName").val() === "") {
-					  alert(warningAlert);
-					} else if ($("#contactAddress").val() === "") {
-					  alert(warningAlert);
-					} else if ($("#contactEmail").val() === "") {
-					  alert(warningAlert);
-					} else if ($("#contactMobile").val() === "") {
+					// if ($("#contactFirstName").val() === "") {
+					//   alert(warningAlert);
+					// } else if ($("#contactLastName").val() === "") {
+					//   alert(warningAlert);
+					// } else if ($("#contactAddress").val() === "") {
+					//   alert(warningAlert);
+					// } else if ($("#contactEmail").val() === "") {
+					//   alert(warningAlert);
+					// } else if ($("#contactMobile").val() === "") {
+					//   alert(warningAlert);
+
+					if ($("#contactFirstName").val() === "" || $("#contactLastName").val() === "" || $("#contactAddress").val() === "" || $("#contactEmail").val() === "" ||$("#contactMobile").val() === "") {
 					  alert(warningAlert);
 					} else {
-						var Hasil ="Contact No: " + $("#hiddenField").val() + "<br/>"+
-						"Name"+ ":  "+ $("#contactFirstName").val()+" "+$("#contactLastName").val()+"<br/>"+
-						"Address"+ ":  "+ $("#contactAddress").val() + "<br/>"+
-						"Email"+ ":  "+ $("#contactEmail").val() + "<br/>"+
-						"Mobile"+":  "+ $("#contactMobile").val() +"<br/>"+"<br/>"
-						;
+						var Hasil = "<tr>"+
+						"<td>"+$("#contactFirstName").val()+"</td>"+
+						"<td>"+$("#contactLastName").val()+"</td>"+
+						"<td>"+$("#contactAddress").val()+"</td>"+
+						"<td>"+$("#contactEmail").val()+"</td>"+
+						"<td>"+$("#contactMobile").val()+"</td>"+
+					"</tr>"
+					;
 						$("#outputContact").append(Hasil);
 						$("#hiddenField").val(parseInt($("#hiddenField").val()) + 1);
 					}
